@@ -1,0 +1,30 @@
+
+create table Registration_180611
+(
+	Name nvarchar(50),
+	Phone nvarchar(10),
+	Email nvarchar(30),
+	Gender nvarchar(6),
+	Password nvarchar(30),
+	Country nvarchar(30),
+	Terms bit
+)
+
+create Procedure RegisterUser_180611
+	@Name nvarchar(50),
+	@Phone nvarchar(10),
+	@Email nvarchar(30),
+	@Gender nvarchar(6),
+	@Password nvarchar(30),
+	@Country nvarchar(30),
+	@Terms bit
+	as
+	begin
+	insert into Registration_180611 values
+	(@Name,@Phone,@Email,@Gender,@Password,@Country,@Terms)
+	end
+
+
+	truncate table Registration_180611
+
+	select * from Registration_180611
